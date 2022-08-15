@@ -2,25 +2,24 @@
     <div class="container">
         <div class="row">
             <div class="col-md-1 col-sm-2 col-xs-2 logo">
-                <a href="<%= rootPath() %>"><img src="<%= rootPath() %>assets/images/logo.png" alt=""></a>
+                <a href="<%= rootPath() %>"><img src="<%= rootPath() %>assets/images/logo.png" alt="Rando Food" width="40% !important" ></a>
             </div>
             <div class="col-md-9 col-sm-9 col-xs-10 titles">
                 <h1>Today's Menu</h1>
                 <h2 class="documentation">
-                    <a href="http://gobuffalo.io/"><i class="fa fa-book" aria-hidden="true"></i> Area: <%= area %></a>
+                    <a href="<%= video %>" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Area: <%= area %></a>
                 </h2>
                 <h2 class="documentation">
-                    <a href="http://gobuffalo.io/"><i class="fa fa-book" aria-hidden="true"></i> Category: <%= category %></a>
+                    <a href="<%= video %>" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Category: <%= category %></a>
                 </h2>
                 <h2 class="documentation">
-                    <a href="http://gobuffalo.io/"><i class="fa fa-book" aria-hidden="true"></i> Tags: <%= tags %></a>
+                    <a href="<%= video %>" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Tags: <%= tags %></a>
                 </h2>
             </div>
         </div>
     </div>
 
 </header>
-
 <div class="row">
     <div class="col-md-12">
         <div class="subtitle">
@@ -32,37 +31,39 @@
             <table class="table table-striped">
                 <thead>
                 <tr text-align="left">
-                    <th class="centered">MEAL</th>
+                    <th class="centered"><a href="<%= video %>" target="_blank"><i class="fa fa-apple-alt" aria-hidden="true"></i> Meal: </a></th>
                 </tr>
                 </thead>
                 <tbody>
 
                 <tr>
                     <td class="centered">
-                        <img src="<%= thumbnail %>" alt="<%= meal %>" width="500" height="600">
+                        <img src="<%= thumbnail %>" alt="<%= meal %>" class="container">
                     </td>
                 </tr>
                 <tr>
                     <td class="centered">
-                        <p>Video:</p>
+                        <p><a href="<%= video %>" target="_blank"><i class="fa fa-apple-alt" aria-hidden="true"></i> Video: </a></p>
+                        <div class="container-main">
                         <script>
                             const url = "<%= video %>";
                             const v = new URL(url).searchParams.get('v');
                             document.currentScript.insertAdjacentHTML(
                                 'beforebegin',
-                                `<iframe width="100%" height="700" src="https://www.youtube.com/embed/${v}?feature=oembed" allowfullscreen></iframe>`);
+                                `<iframe class="responsive-iframe" src="https://www.youtube.com/embed/${v}?feature=oembed" allowfullscreen></iframe>`);
                         </script>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td class="centered">
-                        <p>Tags:</p>
+                        <p><a href="<%= video %>" target="_blank"><i class="fa fa-apple-alt" aria-hidden="true"></i> Tags: </a></p>
                         <%= tags %>
                     </td>
                 </tr>
                 <tr>
                     <td class="centered">
-                        <p>Instructions:</p>
+                        <p> <a href="<%= source %>" target="_blank"><i class="fa fa-apple-alt" aria-hidden="true"></i> Instructions: </a> </p>
                         <%= instructions %>
                     </td>
                 </tr>
@@ -72,4 +73,4 @@
         </div>
     </div>
 </div>
-<div class="foot"> <span> Powered by <a href="https://www.themealdb.com/">themealdb.com</a></span> </div>
+<div class="foot"> <span> Powered by <a href="https://www.themealdb.com/" target="_blank">themealdb.com</a></span> </div>

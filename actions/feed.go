@@ -94,6 +94,7 @@ func FeedFoodfeed(c buffalo.Context) error {
 	StrCategory := themealdb.Meals[0].StrCategory
 	StrTags := themealdb.Meals[0].StrTags
 	strInstructions := themealdb.Meals[0].StrInstructions
+	strSource := themealdb.Meals[0].StrSource
 
 	c.Set("area", strArea)
 	c.Set("thumbnail", strMealThumbnail)
@@ -102,6 +103,7 @@ func FeedFoodfeed(c buffalo.Context) error {
 	c.Set("category", StrCategory)
 	c.Set("tags", StrTags)
 	c.Set("instructions", strInstructions)
+	c.Set("source", strSource)
 
 	//return c.Render(http.StatusOK, r.JSON(strArea+" "+strMealThumbnail+" "+strMeal+" "+strYoutube))
 
