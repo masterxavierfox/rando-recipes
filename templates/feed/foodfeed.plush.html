@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-1 col-sm-2 col-xs-2 logo">
-                <a href="<%= rootPath() %>"><img src="<%= rootPath() %>assets/images/logo.png" alt="Rando Food" width="40% !important" ></a>
+                <a href="<%= rootPath() %>"><img src="<%= rootPath() %>assets/images/logo.png" alt="Rando Recipes" width="40% !important" ></a>
             </div>
             <div class="col-md-9 col-sm-9 col-xs-10 titles">
-                <h1>Today's Menu</h1>
+                <h1>Rando Recipes</h1>
                 <h2 class="documentation">
                     <a href="<%= video %>" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Area: <%= area %></a>
                 </h2>
@@ -24,7 +24,8 @@
     <div class="col-md-12">
         <div class="subtitle">
             <div class="container">
-                <h4>Meal: <%= meal %></h4>
+                <h4>Recipe: <%= meal %></h4>
+                <button onClick="window.location.reload();">Get New Recipe.</button>
             </div>
         </div>
         <div class="table-responsive">
