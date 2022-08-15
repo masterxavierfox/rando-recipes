@@ -57,7 +57,8 @@ func App() *buffalo.App {
 		// Setup and use translations:
 		app.Use(translations())
 
-		app.GET("/", HomeHandler)
+		app.GET("/routes", HomeHandler)
+		app.GET("/", FeedFoodfeed)
 
 		app.ServeFiles("/", http.FS(public.FS())) // serve files from the public directory
 	}

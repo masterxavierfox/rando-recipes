@@ -1,0 +1,75 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 col-sm-2 col-xs-2 logo">
+                <a href="<%= rootPath() %>"><img src="<%= rootPath() %>assets/images/logo.png" alt=""></a>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-10 titles">
+                <h1>Today's Menu</h1>
+                <h2 class="documentation">
+                    <a href="http://gobuffalo.io/"><i class="fa fa-book" aria-hidden="true"></i> Area: <%= area %></a>
+                </h2>
+                <h2 class="documentation">
+                    <a href="http://gobuffalo.io/"><i class="fa fa-book" aria-hidden="true"></i> Category: <%= category %></a>
+                </h2>
+                <h2 class="documentation">
+                    <a href="http://gobuffalo.io/"><i class="fa fa-book" aria-hidden="true"></i> Tags: <%= tags %></a>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="subtitle">
+            <div class="container">
+                <h4>Meal: <%= meal %></h4>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr text-align="left">
+                    <th class="centered">MEAL</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td class="centered">
+                        <img src="<%= thumbnail %>" alt="<%= meal %>" width="500" height="600">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="centered">
+                        <p>Video:</p>
+                        <script>
+                            const url = "<%= video %>";
+                            const v = new URL(url).searchParams.get('v');
+                            document.currentScript.insertAdjacentHTML(
+                                'beforebegin',
+                                `<iframe width="100%" height="700" src="https://www.youtube.com/embed/${v}?feature=oembed" allowfullscreen></iframe>`);
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="centered">
+                        <p>Tags:</p>
+                        <%= tags %>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="centered">
+                        <p>Instructions:</p>
+                        <%= instructions %>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="foot"> <span> Powered by <a href="https://www.themealdb.com/">themealdb.com</a></span> </div>
